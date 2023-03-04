@@ -17,4 +17,4 @@ services:
     volumes:
       - .:/var/task
     environment:
-      APP_KEY: 'base64:ZlcGgyD2TdYlVCpchMYt87W0uB7pT9utBPcdQImQ7rU='
+      APP_KEY: 'base64:/EStlF5sExBpWdQ3eB/h+F2zzKGDc5bvDzwe0KD8ZPg='
