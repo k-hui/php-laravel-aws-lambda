@@ -1,4 +1,4 @@
-service: starterpack-laravel-base
+service: php-laravel
 
 provider:
   name: aws
@@ -7,7 +7,7 @@ provider:
   environment:
     APP_ENV: production
     APP_DEBUG: true # set to false when moving to production
-    APP_KEY: 'base64:/EStlF5sExBpWdQ3eB/h+F2zzKGDc5bvDzwe0KD8ZPg='
+    APP_KEY: "base64:/EStlF5sExBpWdQ3eB/h+F2zzKGDc5bvDzwe0KD8ZPg="
   # Enable new serverless.yml features to avoid deprecation warnings
   apiGateway:
     shouldStartNameWithService: true
@@ -25,14 +25,13 @@ plugins:
   - ./vendor/bref/bref
 
 functions:
-
   api:
     handler: public/index.php
     timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
     layers:
       - ${bref:layer.php-81-fpm}
     events:
-      - httpApi: '*'
+      - httpApi: "*"
 
   # Run artisan commands on Lambda by running:
   #     vendor/bin/bref cli starterpack-laravel-base-dev-artisan -- <command>
